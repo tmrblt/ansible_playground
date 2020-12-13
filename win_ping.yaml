@@ -1,0 +1,13 @@
+- name: Test windows connection
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name: Test win_ping 
+    win_ping:
+  
+  - name: set stats
+    set_stats:
+      data: 
+        first_data: ansible_facts['hostname']
+
+        
