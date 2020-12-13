@@ -10,6 +10,6 @@
   - name: set stats
     set_stats:
       data: 
-        first_data: ansible_facts.hostname
+        first_data: "{{ ansible_facts.hostname }}"
 
         
