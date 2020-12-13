@@ -5,7 +5,7 @@
   - name: Test win_ping 
     win_ping:
 
-  - debug: var=ansible_facts
+  - debug: var=ansible_facts.hostname
   
   - name: set stats
     set_stats:
