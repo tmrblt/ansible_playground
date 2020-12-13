@@ -4,10 +4,12 @@
   tasks:
   - name: Test win_ping 
     win_ping:
+
+  - debug: var=ansible_facts
   
   - name: set stats
     set_stats:
       data: 
-        first_data: ansible_facts['hostname']
+        first_data: ansible_facts.hostname
 
         
