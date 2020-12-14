@@ -11,5 +11,3 @@
     set_stats:
       data: 
         first_data: "{{ ansible_facts.hostname }}"
-
-        
