@@ -13,6 +13,8 @@
       name: "{{ registry_key }}"            #'ProductName'
     register: result_regkey
 
+  - debug: var=result_regkey.value
+
   - name: Set fact inventory_hostname
     set_fact:
       hostname: "{{ inventory_hostname }}"
