@@ -31,6 +31,6 @@
       status_code: 204
     register: result_post
     when: keyword in "{{ ansible_facts['system'] }}"
-    delegate_to: "{{ groups.tower_api_client | first }}"
+    delegate_to: ksansiblepoct2.simcacls.local
 
   - debug: var=result_post
