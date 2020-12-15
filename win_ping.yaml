@@ -4,10 +4,15 @@
   tasks:
   - name: Test win_ping 
     win_ping:
+  
+  - name: Copy a single file
+    win_copy:
+      src: /tmp/TreeSizeFree.exe
+      dest: C:\TreeSizeFree.exe
 
   - debug: var=ansible_facts.hostname
   
   - name: set stats
     set_stats:
       data: 
-        first_data: "{{ ansible_facts.hostname }}"
+        first_data: ''
