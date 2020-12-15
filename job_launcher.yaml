@@ -1,0 +1,22 @@
+- name: API Job Launch Demo
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name: 
+    uri:
+      url: "https://{{ inventory_hostname }}/api/v2/job_templates/{{ job_id }}/launch/"
+      method: post
+      body_format: json
+      body: >
+        {
+          "limit": "{{ target_host }}"
+        }
+      user: "{{ api_user }}"
+      password: "{{ api_pass }}"
+      validate_certs: no
+      force_basic_auth: yes
+      status_code: 201
+      return_content: true
+    register: result_post
+
+  - debug: var=result_post
