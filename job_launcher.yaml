@@ -11,8 +11,8 @@
         {
           "limit": "{{ target_host }}"
         }
-      user: "{{ api_user }}"
-      password: "{{ api_pass }}"
+      user: admin
+      password: redhat
       validate_certs: no
       force_basic_auth: yes
       status_code: 201
