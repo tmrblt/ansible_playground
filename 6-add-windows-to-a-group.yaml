@@ -1,5 +1,5 @@
 - name: Add Windows Server to a Group
-  hosts: windows
+  hosts: all
   gather_facts: false
   vars:
     group_id: "{{ group_id }}"
