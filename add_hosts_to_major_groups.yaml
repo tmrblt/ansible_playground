@@ -9,7 +9,7 @@
     set_fact:
       hostname: "{{ inventory_hostname }}"
 
-  - debug: var=ansible_facts['kernel']
+  - debug: var=ansible_facts['system']
 
   - name: Add servers to the specified group
     uri:
