@@ -1,5 +1,5 @@
 - name: Add All Server to a Group
-  hosts: ksansiblepoct2.simcacls.local
+  hosts: all
   gather_facts: true
   vars:
     group_id: "{{ group_id }}"
