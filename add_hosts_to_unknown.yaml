@@ -3,7 +3,7 @@
   gather_facts: true
   vars:
     group_id: "{{ group_id }}"
-    keyword: "{{ keyword }}"                #2019
+ #   keyword: "{{ keyword }}"                #2019
   tasks:
   - name: Set fact inventory_hostname
     set_fact:
