@@ -9,7 +9,7 @@
     set_fact:
       hostname: "{{ inventory_hostname }}"
 
-  - debug: var=hostvars[inventory_hostname].system
+  - debug: var=ansible_facts['kernel']
 
   - name: Add servers to the specified group
     uri:
@@ -30,7 +30,7 @@
       force_basic_auth: yes
       status_code: 204
     register: result_post
-    when: keyword in hostvars[inventory_hostname].system
+    when: keyword in "{{ ansible_facts['system'] }}"
     delegate_to: "{{ groups.tower_api_client | first }}"
 
   - debug: var=result_post
