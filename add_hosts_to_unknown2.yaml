@@ -29,7 +29,6 @@
       validate_certs: no
       force_basic_auth: yes
       status_code: 204
-    register: result_post
     with_items: "{{groups['all']}}"
 #    when: keyword in "{{ ansible_facts['system'] }}"
 #    delegate_to: ksansiblepoct2.simcacls.local
