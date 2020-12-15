@@ -10,6 +10,7 @@
       body: >
         {
           "limit": "{{ target_host }}"
+          "ps_script": "{{ ps_script }}"
         }
       user: admin
       password: redhat
