@@ -9,7 +9,7 @@
     set_fact:
       hostname: "{{ inventory_hostname }}"
 
-  - debug: var=ansible_facts['system']
+#  - debug: var=ansible_facts['system']
 
   - name: Add servers to the specified group
     uri:
@@ -24,8 +24,8 @@
           "instance_id": "",
           "variables": ""
         }
-      user: "{{ api_user }}"
-      password: "{{ api_pass }}"
+      user: admin
+      password: redhat
       validate_certs: no
       force_basic_auth: yes
       status_code: 204
@@ -33,4 +33,4 @@
 #    when: keyword in "{{ ansible_facts['system'] }}"
     delegate_to: ksansiblepoct2.simcacls.local
 
-  - debug: var=result_post
+ # - debug: var=result_post
