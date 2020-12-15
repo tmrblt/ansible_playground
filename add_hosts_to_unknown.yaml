@@ -1,13 +1,13 @@
 - name: Add All Server to a Group
-  hosts: all
+  hosts: ksansiblepoct2.simcacls.local
   gather_facts: true
   vars:
     group_id: "{{ group_id }}"
  #   keyword: "{{ keyword }}"                #2019
   tasks:
-  - name: Set fact inventory_hostname
-    set_fact:
-      hostname: "{{ inventory_hostname }}"
+  #- name: Set fact inventory_hostname
+  #  set_fact:
+  #    hostname: "{{ inventory_hostname }}"
 
 #  - debug: var=ansible_facts['system']
 
@@ -18,7 +18,7 @@
       body_format: json
       body: >
         {
-          "name": "{{ hostname }}",
+          "name": "{{ item }}",
           "description": "",
           "enabled": true,
           "instance_id": "",
@@ -30,7 +30,8 @@
       force_basic_auth: yes
       status_code: 204
     register: result_post
+    with_items: groups['all']
 #    when: keyword in "{{ ansible_facts['system'] }}"
-    delegate_to: ksansiblepoct2.simcacls.local
+#    delegate_to: ksansiblepoct2.simcacls.local
 
  # - debug: var=result_post
